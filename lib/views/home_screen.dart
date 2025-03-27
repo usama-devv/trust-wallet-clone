@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:trust_wallet_clone/views/settings_screen.dart';
 import 'package:trust_wallet_clone/views/widgets/build_action_button.dart';
 import 'package:trust_wallet_clone/views/widgets/square_bg_icon.dart';
 
@@ -14,7 +16,9 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: isDark ? Colors.black : Colors.white,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => SettingsScreen());
+          },
           icon: Icon(Icons.settings, color: Colors.grey),
         ),
         title: Center(
