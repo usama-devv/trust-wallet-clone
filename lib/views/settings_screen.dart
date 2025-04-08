@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trust_wallet_clone/controllers/theme_controller.dart';
 import 'package:trust_wallet_clone/views/widgets/settings_list_tile.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+  final ThemeController themeController = Get.find();
+  SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    bool isDarkMode = true;
     return Scaffold(
       appBar: AppBar(
         title: Text("Settings"),
@@ -21,18 +22,25 @@ class SettingsScreen extends StatelessWidget {
         children: [
           ListTile(
             leading: Icon(Icons.account_balance_wallet, color: Colors.grey),
-            title: Text("Wallets", style: TextStyle(
-              fontWeight: FontWeight.bold
-            ),),
+            title: Text(
+              "Wallets",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             subtitle: Text("Khokhar"),
-            onTap: (){},
+            onTap: () {},
           ),
-          ListTile(
-            leading: Icon(Icons.nightlight_round, color: Colors.grey),
-            title: Text("Dark Mode", style: TextStyle(
-                fontWeight: FontWeight.bold
-            ),),
-            trailing: Switch(value: isDarkMode, onChanged: (value){}),
+          Obx(
+            () => ListTile(
+              leading: Icon(Icons.nightlight_round, color: Colors.grey),
+              title: Text(
+                "Dark Mode",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              trailing: Switch(
+                value: themeController.isDarkMode.value,
+                onChanged: (value) => themeController.toggleTheme(),
+              ),
+            ),
           ),
           Divider(),
 

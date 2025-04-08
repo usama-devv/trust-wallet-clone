@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
             Container(
               height: 40,
               decoration: BoxDecoration(
-                color: isDark ? Colors.black : Colors.grey[300],
+                color: isDark ? Colors.grey[900] : Colors.grey[300],
                 borderRadius: BorderRadius.circular(25),
               ),
               child: TextField(

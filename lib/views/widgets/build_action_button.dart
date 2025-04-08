@@ -13,7 +13,7 @@ class BuildActionButton extends StatelessWidget {
     return Column(
       children: [
         CircleAvatar(
-          backgroundColor: Colors.grey[100],
+          backgroundColor: isDark ? Colors.grey[900] : Colors.grey[100],
           radius: 25,
           child: Icon(icon, color: isDark ? Colors.white : Colors.black),
         ),
