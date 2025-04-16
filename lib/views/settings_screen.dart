@@ -42,7 +42,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
           ),
-          
+
           Divider(),
 
           SettingListTile(icon: Icons.attach_money, title: "Price Alerts"),
